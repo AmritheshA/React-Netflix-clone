@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth,database } from "../firbaseConfig";
+import { auth } from "../firbaseConfig";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

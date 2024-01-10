@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import requests from "../Requests";
 
 function Main() {
   const [movies, setMovies] = useState([]);
-
+  
   useEffect(() => {
-    axios.get(requests.requestPopular).then((response) => {
-      const movies = response.data.results;
-      setMovies(movies);
-    });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(requests.requestPopular);
+        const movies = response.data.results;
+        setMovies(movies);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const truncateStr = (string, length) => {

@@ -28,13 +28,10 @@ function Navbar() {
 
       {user?.email ? (
         <div>
-          <Link to="/Account">
-            <button className="text-white pr-4">Profile</button>
-          </Link>
+          
             <button
               onClick={handleLogout}
-              className="bg-red-600 text-white px-6 py-2 rounded cursor-pointer"
-            >
+              className="bg-red-600 text-white px-6 py-2 rounded cursor-pointer">
               LogOut
             </button>
           
